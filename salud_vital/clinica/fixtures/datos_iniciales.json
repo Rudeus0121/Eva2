@@ -1,0 +1,4 @@
+[
+  {"model": "clinica.especialidad", "pk": 1, "fields": {"nombre": "Cardiología", "descripcion": "Corazón y sistema circulatorio"}},
+  {"model": "clinica.especialidad", "pk": 2, "fields": {"nombre": "Pediatría", "descripcion": "Atención médica infantil"}}
+]

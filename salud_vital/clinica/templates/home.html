@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+  <div class="card shadow-lg p-5">
+    <h1 class="mb-4">💊 Bienvenido a <strong>Salud Vital</strong></h1>
+    <p class="lead text-muted">Selecciona una sección para gestionar la información del sistema.</p>
+    
+    <div class="row mt-5">
+      <div class="col-md-4 mb-4">
+        <a href="{% url 'listar_especialidades' %}" class="btn btn-outline-primary btn-lg w-100">🏥 Especialidades</a>
+      </div>
+      <div class="col-md-4 mb-4">
+        <a href="{% url 'listar_medicos' %}" class="btn btn-outline-success btn-lg w-100">🩺 Médicos</a>
+      </div>
+      <div class="col-md-4 mb-4">
+        <a href="{% url 'listar_pacientes' %}" class="btn btn-outline-info btn-lg w-100">👨‍🦱 Pacientes</a>
+      </div>
+      <div class="col-md-4 mb-4">
+        <a href="{% url 'listar_consultas' %}" class="btn btn-outline-warning btn-lg w-100">📋 Consultas</a>
+      </div>
+      <div class="col-md-4 mb-4">
+        <a href="{% url 'listar_tratamientos' %}" class="btn btn-outline-secondary btn-lg w-100">💊 Tratamientos</a>
+      </div>
+      <div class="col-md-4 mb-4">
+        <a href="{% url 'listar_medicamentos' %}" class="btn btn-outline-danger btn-lg w-100">💉 Medicamentos</a>
+      </div>
+      <div class="col-md-4 offset-md-4">
+        <a href="{% url 'listar_recetas' %}" class="btn btn-outline-dark btn-lg w-100">📜 Recetas</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

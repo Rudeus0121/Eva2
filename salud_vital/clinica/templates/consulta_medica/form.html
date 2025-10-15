@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}{{ accion }} Consulta{% endblock %}
+{% block content %}
+<div class="card shadow p-4">
+  <h3 class="text-center mb-4">{% if accion == 'Editar' %}✏️ Editar Consulta{% else %}➕ Nueva Consulta{% endif %}</h3>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="d-flex justify-content-between">
+      <a href="{% url 'listar_consultas' %}" class="btn btn-secondary">← Volver</a>
+      <button type="submit" class="btn btn-primary">💾 Guardar</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

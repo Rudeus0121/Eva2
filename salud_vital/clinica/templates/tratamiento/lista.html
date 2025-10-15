@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Lista de Tratamientos{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>💊 Tratamientos</h2>
+  <a href="{% url 'crear_tratamiento' %}" class="btn btn-success">+ Nuevo Tratamiento</a>
+</div>
+
+<table class="table table-striped shadow-sm">
+  <thead class="table-primary">
+    <tr>
+      <th>ID</th>
+      <th>Consulta</th>
+      <th>Descripción</th>
+      <th>Duración (días)</th>
+      <th>Observaciones</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for tratamiento in tratamientos %}
+    <tr>
+      <td>{{ tratamiento.id }}</td>
+      <td>{{ tratamiento.consulta }}</td>
+      <td>{{ tratamiento.descripcion|truncatewords:5 }}</td>
+      <td>{{ tratamiento.duracion_dias }}</td>
+      <td>{{ tratamiento.observaciones }}</td>
+      <td>
+        <a href="{% url 'editar_tratamiento' tratamiento.id %}" class="btn btn-warning btn-sm">Editar</a>
+        <a href="{% url 'eliminar_tratamiento' tratamiento.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="6" class="text-center">No hay tratamientos registrados.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

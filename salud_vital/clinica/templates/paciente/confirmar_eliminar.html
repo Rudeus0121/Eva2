@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Eliminar Paciente{% endblock %}
+{% block content %}
+<div class="alert alert-danger text-center mt-5 p-4">
+  <h4>⚠️ ¿Eliminar al paciente {{ obj }}?</h4>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+    <a href="{% url 'listar_pacientes' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}
